@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: work-wechat-admin
+  #mysql数据库配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.payment8001.entity
+server:
+  port: 8001
