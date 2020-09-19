@@ -1,4 +1,4 @@
-package com.order80.config;
+package com.eiletxie.springcloud.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -6,17 +6,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @program: springcloud
- * @description: config
- * @author: zhaol
- * @create: 2020-09-15 16:33
- **/
+ * @Author EiletXie
+ * @Since 2020/3/9 14:03
+ */
 @Configuration
 public class ApplicationContextConfig {
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
 
+    @Bean
+   @LoadBalanced
+    public RestTemplate getRestTemplate() {
+        return  new RestTemplate();
+    }
 }
