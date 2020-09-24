@@ -10,6 +10,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -39,17 +40,21 @@ public class PaymentController {
     }
 
     @GetMapping(value="/payment/get/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
-        try {
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id,HttpServletRequest re) {
+        String header = re.getHeader("X-Request-Foo");
+        String foo = re.getParameter("foo");
+        System.out.println(header);
+        System.out.println(foo);
+    /*    try {
             Thread.sleep(3000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         Payment payment = paymentService.getPaymentById(id);
         log.info("****查询结果:" + payment);
         if(payment != null){
 
-            return  new CommonResult(200,"查询成功,serverPort: " + serverPort,payment);
+            return  new CommonResult(200,"查询成功,serverPort: " + serverPort+"pa:",payment);
         } else {
             return new CommonResult(444,"没有对应记录，查询ID: " + id,null);
         }
