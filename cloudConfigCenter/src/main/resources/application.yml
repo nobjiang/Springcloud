@@ -1,0 +1,19 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/nobjiang/config.git
+          search-paths:
+            - config
+          username: nobjiang
+          password: "!Love521125"
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
