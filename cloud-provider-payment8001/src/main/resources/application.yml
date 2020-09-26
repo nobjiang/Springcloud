@@ -1,6 +1,12 @@
 spring:
   application:
     name: application8001
+  zipkin:
+    base-url: http://124.70.220.74:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
   #mysql数据库配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

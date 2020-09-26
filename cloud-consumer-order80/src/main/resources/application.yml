@@ -1,6 +1,11 @@
 spring:
   application:
     name: application80
+  zipkin:
+    base-url: http://124.70.220.74:9411/
+  sleuth:
+    sampler:
+      probability: 1
 server:
   port: 80
 
