@@ -24,6 +24,7 @@
     <module>cloud-gateway-gateway9527</module>
       <module>cloudConfigCenter</module>
       <module>cloudConfigClient</module>
+      <module>cloudConfigClientTwo</module>
   </modules>
   <packaging>pom</packaging>
 
