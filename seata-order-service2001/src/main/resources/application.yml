@@ -1,0 +1,37 @@
+server:
+  port: 2001
+
+
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    alibaba:
+     seata:
+        #自定义事务组名称需要与seata-server中的对应
+        tx-service-group: my_test_tx_group
+    nacos:
+      discovery:
+        server-addr: 111.230.23.30:8848
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cdb-1tlk0nk4.bj.tencentcdb.com:10243/seata_order
+    username: root
+    password: "!Love521125"
+
+
+feign:
+  hystrix:
+    enabled: false
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+
+logging:
+  level:
+    io:
+      seata: info
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
